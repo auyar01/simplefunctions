@@ -1,0 +1,22 @@
+Package: simplefunctions
+Title: Uses four simple functions 
+Version: 0.0.0.9000
+Authors@R: 
+    person("Abdurrahman", "Uyar", , "abdurrahman.uyar1@hotmail.com", role = c("aut", "cre"))
+Description: This package contains four functions. They are very basic, and do things like load an image with 1 function and the path to the image. 
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.3
+Imports: 
+    dplyr,
+    grid,
+    gridExtra,
+    here,
+    png,
+    stringr,
+    magrittr,
+    ggplot2
+Suggests: 
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
