@@ -21,7 +21,11 @@ Generates a plot of dengue or flu cases throughout the years in different countr
 }
 \examples{
 \dontrun{
-If you have a dataframe with a column country that contains a country (or more countries), and a column with dengue/flu_count for different years.
-And if you would want a plot for flu cases in Germany from 2015-2020, you would use: plot_cases(df = dataframe, disease = "flu", plot_title = "Flu cases in Germany from 2015-2020")
+If you have a dataframe with a column country that contains a country
+(or more countries), and a column with dengue/flu_count for different years.
+And if you would want a plot for flu cases in Germany from 2015-2020,
+you would use:
+
+plot_cases(df = dataframe, disease = "flu", plot_title = "Flu cases in Germany from 2015-2020")
 }
 }

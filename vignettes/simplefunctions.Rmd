@@ -1,23 +1,18 @@
 ---
-output: github_document
+title: "simplefunctions"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{simplefunctions}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
 ---
-
-<!-- README.md is generated from README.Rmd. Please edit that file -->
 
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
-  comment = "#>",
-  fig.path = "man/figures/README-",
-  out.width = "100%"
+  comment = "#>"
 )
 ```
-
-# simplefunctions
-
-<!-- badges: start -->
-<!-- badges: end -->
-
 
 Simplefunctions is an R package consisting of four functions, that are really basic and quite specific.The functions are:
 
@@ -28,23 +23,15 @@ Simplefunctions is an R package consisting of four functions, that are really ba
 
 These functions will be used with examples below.
 
-The package also comes with 2 datasets named `flu_cases` and `dengue_cases`. With `flu_cases` showing the estimated flu cases for different countries per year, and `dengue_cases` showing the same thing, but for estimated dengue cases. Use `?flu_cases` and `?dengue_cases` after installation for the documentation of these datasets.
+The package also comes with 2 datasets named `flu_cases` and `dengue_cases`. With `flu_cases` showing the estimated flu cases for different countries per year, and `dengue_cases` showing the same thing, but for estimated dengue cases. 
+These datasets are documented, and documentation can be read by using `?flu_cases` and `?dengue_cases`.
 
 
-## Installation
-
-You can install the development version of simplefunctions from [GitHub](https://github.com/) with: 
-
-``` r
-# install.packages("devtools")
-devtools::install_github("auyar01/simplefunctions")
-```
-
-## Loading library and datasets
+We will start by loading in our package and both datasets, then using each function to show examples of how they work.
 
 ```{r loading package and datasets }
-library(simplefunctions)
 devtools::load_all()
+library(simplefunctions)
 
 data("flu_cases")
 data("dengue_cases")
@@ -114,11 +101,6 @@ This function is not really related to previous functions. This one's just for l
 # Loading a picture a folder structure from a course I followed.
 load_image("inst/DAUR2_fs.png")
 ```
-
-
-
-
-
 
 
 

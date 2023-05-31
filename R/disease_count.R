@@ -9,8 +9,12 @@
 #'
 #' @examples
 #' \dontrun{
-#' If you have a dataframe with a column country that contains different countries, and a column with dengue/flu_count for different dates.
-#' And u want to know the sum of flu cases throughout the years for Bolivia you would use this: disease_count(df = dataframe, country = "Bolivia", disease = "flu")
+#' If you have a dataframe with a column country that contains different countries,
+#' and a column with dengue/flu_count for different dates.
+#' And u want to know the sum of flu cases throughout the years
+#' for Bolivia you would use this:
+#'
+#' disease_count(df = dataframe, country = "Bolivia", disease = "flu")
 #' }
 #' @import dplyr
 disease_count <- function(df, country_name, disease){

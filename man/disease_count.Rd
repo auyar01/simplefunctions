@@ -21,7 +21,11 @@ Counts cases of flu or dengue in a country.
 }
 \examples{
 \dontrun{
-If you have a dataframe with a column country that contains different countries, and a column with dengue/flu_count for different dates.
-And u want to know the sum of flu cases throughout the years for Bolivia you would use this: disease_count(df = dataframe, country = "Bolivia", disease = "flu")
+If you have a dataframe with a column country that contains different countries,
+and a column with dengue/flu_count for different dates.
+And u want to know the sum of flu cases throughout the years
+for Bolivia you would use this:
+
+disease_count(df = dataframe, country = "Bolivia", disease = "flu")
 }
 }

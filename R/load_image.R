@@ -13,7 +13,7 @@
 #' }
 #' @import png
 #' @import grid
-#' @import gridExtra
+#' @importFrom gridExtra grid.arrange
 #' @import here
 #' @importFrom grDevices as.raster
 load_image <- function(path){
