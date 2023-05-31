@@ -29,15 +29,14 @@ You can install the development version of simplefunctions from
 
 ``` r
 # install.packages("devtools")
-devtools::install_github("auyar01/simplefunctions")
+devtools::install_github("auyar01/simplefunctions", build_vignettes = TRUE)
+
 ```
 
 ## Loading library and datasets
 
 ``` r
 library(simplefunctions)
-devtools::load_all()
-#> ℹ Loading simplefunctions
 
 data("flu_cases")
 data("dengue_cases")
