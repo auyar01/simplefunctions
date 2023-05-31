@@ -1,0 +1,106 @@
+---
+title: "simplefunctions"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{simplefunctions}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+Simplefunctions is an R package consisting of four functions, that are really basic and quite specific.The functions are:
+
+* Function 1: `get_date()`
+* Function 2: `disease_count()`
+* Function 3: `plot_cases()`
+* Function 4: `load_image()`
+
+These functions will be used with examples below.
+
+The package also comes with 2 datasets named `flu_cases` and `dengue_cases`. With `flu_cases` showing the estimated flu cases for different countries per year, and `dengue_cases` showing the same thing, but for estimated dengue cases. 
+These datasets are documented, and documentation can be read by using `?flu_cases` and `?dengue_cases`.
+
+
+We will start by loading in our package and both datasets, then using each function to show examples of how they work.
+
+```{r loading package and datasets }
+devtools::load_all()
+library(simplefunctions)
+
+data("flu_cases")
+data("dengue_cases")
+```
+
+
+## Function 1: `get_date()`
+When a dataframe contains a column with dates in yyyy/mm/dd format, this function can be used to get only the years, months or days. I have used the code of this function to get the years for my datasets. In the chunk below I'm showing how it would work on a sample dataframe.
+```{r get_date() example}
+
+# Creating dataframe with random years in yyyy/mm/dd format
+dataframe <- data.frame(date = c(sample(seq(as.Date('1999/01/01'), as.Date('2023/01/01'), by="year"), 12)))
+dataframe
+
+
+# Using get_date() to obtain the years.
+dataframe$years <- get_date(dataframe$date,dmy = "year")
+dataframe
+
+
+# Using get_date() to obtain the months.
+dataframe$months <- get_date(dataframe$date,dmy = "month")
+dataframe
+
+# Using get_date() to obtain the days.
+dataframe$days <- get_date(dataframe$date,dmy = "day")
+dataframe
+```
+
+
+
+## Function 2: `disease_count()`
+This function counts the total amount of cases of dengue or flu in a country throughout the years. This function is fairly specific for the 2 datasets in this package, so these will be used as examples.
+
+```{r disease_count() example}
+# Total amount of flu cases from 2002-2015 in Belgium. 
+disease_count(df = flu_cases, country_name = "Belgium", disease = "flu")
+
+# Total amount of dengue cases from 2002-2015 in Brazil.
+disease_count(df = dengue_cases, country_name = "Brazil", disease = "dengue")
+
+```
+## Function 3: `plot_cases()`
+
+This function plots a line graph of dengue/flu cases throughout the years in different countries. It uses all the countries in the dataframe, so it is best used after filtering for only the countries you want. 
+```{r plot_cases() example, fig.width= 7}
+
+# Filtering only Argentina, Bolivia and Brazil for dengue_cases
+argbolbra_dengue <- dengue_cases %>% filter(country == "Argentina" | country == "Bolivia" | country == "Brazil")
+
+# Plotting dengue cases for Argentina, Bolivia and Brazil from 2002-2015
+plot_cases(df = argbolbra_dengue, disease = "dengue",plot_title = "Dengue cases Argentina, Bolivia and Brazil from 2002-2015")
+
+# Filtering only Argentina, Bolivia and Brazil for flu_cases
+argbolbra_flu <- flu_cases %>% filter(country == "Argentina" | country == "Bolivia" | country == "Brazil")
+
+# Plotting flu cases for Argentina, Bolivia and Brazil from 2002-2015
+plot_cases(df = argbolbra_flu, disease = "flu",plot_title = "Flu cases Argentina, Bolivia and Brazil from 2002-2015")
+```
+
+
+
+## Function 4: `load_image()`
+This function is not really related to previous functions. This one's just for loading an image by giving the path to the file.
+
+```{r load_image() example, fig.height=5, fig.width=5}
+# Loading a picture a folder structure from a course I followed.
+load_image("inst/DAUR2_fs.png")
+```
+
+
+
