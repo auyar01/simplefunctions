@@ -36,8 +36,6 @@ devtools::install_github("auyar01/simplefunctions")
 
 ``` r
 library(simplefunctions)
-devtools::load_all()
-#> ℹ Loading simplefunctions
 
 data("flu_cases")
 data("dengue_cases")
