@@ -99,7 +99,7 @@ This function is not really related to previous functions. This one's just for l
 
 ```{r load_image() example, fig.height=5, fig.width=5}
 # Loading a picture a folder structure from a course I followed.
-load_image("inst/DAUR2_fs.png")
+load_image("figures/DAUR2_fs.png")
 ```
 
 
