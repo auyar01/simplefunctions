@@ -44,7 +44,6 @@ devtools::install_github("auyar01/simplefunctions")
 
 ```{r loading package and datasets }
 library(simplefunctions)
-devtools::load_all()
 
 data("flu_cases")
 data("dengue_cases")
